@@ -1,0 +1,1 @@
+Whoops, something broke. <a class="button" href="index.php"> Click here to go back to the home page</a>
