@@ -1,6 +1,6 @@
 <?php
     // First we execute our common code to connection to the database and start the session 
-    require("common.php"); 
+    require("resources/common.php"); 
      
     // This if statement checks to determine whether the registration form has been submitted 
     // If it has, then the registration code is run, otherwise the form is displayed 
@@ -20,7 +20,7 @@
         if(empty($_POST['password'])) 
         { 
             die("Please enter a password."); 
-        } 
+        }
          
         // Make sure the user entered a valid E-Mail address 
         // filter_var is a useful PHP function for validating form input, see: 
@@ -29,7 +29,7 @@
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
         { 
             die("Invalid E-Mail Address"); 
-        } 
+        }
          
         // We will use this SQL query to see whether the username entered by the 
         // user is already in use.  A SELECT query is used to retrieve data from the database. 
