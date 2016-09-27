@@ -8,7 +8,7 @@
 <a class="button" href="index.php">Home</a>
 <a class="button" href="index.php">Back</a>
 
-<?php require("resources/scripts/register.php"); ?>
+<?php require("resources/user-management/register.php"); ?>
 
 <form action="register.php" method="post"> 
     Username:<br /> 
@@ -22,3 +22,4 @@
     <br /><br /> 
     <input type="submit" value="Register" /> 
 </form>
+
