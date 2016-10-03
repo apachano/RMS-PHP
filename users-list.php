@@ -6,4 +6,4 @@
 <div id=head><?php require("resources/head.php"); ?></div>
 <div id=user><?php require("resources/user-management/user.php"); ?></div>
 
-<a class="button" href="users.php">Employees</a>
+<form action="users-list.php">

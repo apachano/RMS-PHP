@@ -1,10 +1,11 @@
 <?php
 $servername = "localhost";
-$username = "access";
+$username = "acces";
 $password = "Y67bDDCCte5MmeTX";
+$database = "isp";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
 if (!$conn) {
@@ -23,4 +24,3 @@ if (!$conn) {
     // to have cookies enabled.  For more information about sessions:
     // http://us.php.net/manual/en/book.session.php
     session_start();
-?>
