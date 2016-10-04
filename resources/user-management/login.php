@@ -1,20 +1,19 @@
 <?php
     require("resources/common.php"); 
 
-    if(!empty($_POST)
-    {
-    	if empty($_POST['id']) { echo "please enter your user id";}
-    	if empty($_POST['password']) { echo "please enter a password";}
+    $id = $_POST['id'];
+    $enter=true;
+    if empty($_POST['id']) { echo "please enter your user id"; $enter=false;}
+    if empty($_POST['password']) { echo "please enter a password"; $enter=false;}
 
-    	$sql = "SELECT id, password FROM login WHERE id = $POST['id']";
+    if($enter == true)
+    {
+
+    	$sql = "SELECT id, password FROM login WHERE id = $id";
     	$result = mysqli_query($conn, $sql);
 
-    	if (mysqli_num_rows($result) > 0) {
-    		while ($row = mysqli_fetch_assoc($result)) {
-    			echo "id: " . $row["id"]. " - Name: " . $row ["password"]. "<br>";
-    		}
-    	}
-    	else {echo "incorrect uid"}
+        echo $result['id'];
+        echo $result['password']
 
     	mysqli_close($conn);
 

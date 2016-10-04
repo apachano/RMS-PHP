@@ -2,11 +2,25 @@
 
 require("resources/common.php");
 
-$submitted['id'] = $_POST['id'];
-$submitted['nameFirst'] = $_POST['nameFirst'];
-$submitted['nameLast'] = $_POST['nameLast'];
+$id = $_POST['id'];
+$nameFirst = $_POST['nameFirst'];
+$nameLast = $_POST['nameLast'];
+
+//Script to determine which input boxes have been filled and what $sql is equal to
 
 $sql = "SELECT id, nameFirst, nameLast FROM employees";
+
+if (!empty($_POST['id'])) 
+{ 
+	$sql = "SELECT id, nameFirst, nameLast FROM employees WHERE id=$id";
+}
+/*if (!empty($nameFirst))
+{
+	$sql = "SELECT id, nameFirst, nameLast FROM employees WHERE nameFirst=$nameFirst";
+}*/
+
+
+//End script, Note: I need to develop a more efficient way to do this.
 
 $result = mysqli_query($conn, $sql)
 
@@ -23,9 +37,9 @@ $result = mysqli_query($conn, $sql)
 
 <div>Search for an employee</div>
 <form action="users-manage.php" method="post">
-	ID: <input type="text" name="id" value="<?php echo $submitted['id']; ?>"/><br>
-	First Name <input type="text" name="nameFirst" value="<?php echo $submitted['nameFirst']; ?>"/><br>
-	Last Name <input type="text" name="nameLast" value="<?php echo $submitted['nameLast']; ?>"/><br>
+	ID: <input type="text" name="id" value="<?php echo $id; ?>"/><br>
+	First Name <input type="text" name="nameFirst" value="<?php echo $nameFirst; ?>"/><br>
+	Last Name <input type="text" name="nameLast" value="<?php echo $nameLast; ?>"/><br>
 	<input type="submit" value="search"/>
 </form>
 
