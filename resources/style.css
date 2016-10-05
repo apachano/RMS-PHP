@@ -17,12 +17,20 @@ body{
 	width:100%;
 }
 #user{
-	width:500px;
+	width:200px;
 	height:100%;
 	background-color:#8888FF;
 	display:inline-block;
+	float:left;
 }
 #main{
 	display:inline-block;
-
+	height:100%;
+	float:left;
+}
+.row{
+	display:inline-block;
+}
+#systemMessage{
+	background-color:#FF3333;
 }

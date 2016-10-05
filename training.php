@@ -1,4 +1,4 @@
-<?php $accesslevel=2; $page="employees";?>
+<?php $accessLevel=1;?>
 
 <div id="top"><div id="time">Time Not Synced</div></div>
 <div id=head><?php require("resources/head.php"); ?></div>
@@ -7,6 +7,8 @@
 <a class="button" href="index.php">Home</a>
 <a class="button" href="index.php">Back</a>
 
-<a class="button" href="users-manage.php">Manage Employees</a>
-<a class="button" href="users-new.php">Add / Edit Employee Information</a>
-<a class="button" href="users-delete.php">Delete Employee</a>
+<div class="title">Training</div>
+
+<a class="button" class="two" href="training-tracking.php">Employee training trackings</a>
+<a class="button" class="five" href="training-manage.php">Employee skill levels</a>
+<a class="button" href="uc.php">Other</a>

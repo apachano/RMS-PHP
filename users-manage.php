@@ -1,6 +1,6 @@
 <?php 
 
-require("resources/common.php");
+require ("resources/common.php"); 
 
 $id = $_POST['id'];
 $nameFirst = $_POST['nameFirst'];

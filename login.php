@@ -1,15 +1,24 @@
 <?php
-    require("resources/common.php"); 
+    require("resources/common.php");
 
+    $id= "";
     $id = $_POST['id'];
     $entered=true;
-    if (empty($_POST['id'])) { echo "please enter your user id"; $entered=false;}
-    if (empty($_POST['password'])) { echo "please enter a password"; $entered=false;}
+    if(empty($_POST['id'])) 
+    { 
+    	echo "please enter your user id"; 
+    	$entered=false;
+    }
+    if(empty($_POST['password'])) 
+    { 
+    	echo "please enter a password"; 
+    	$entered=false;
+    }
 
     if($entered == true)
     {
 
-    	$sql = "SELECT id, password FROM login WHERE id = $id";
+    	$sql = "SELECT id, password, rank FROM login WHERE id = $id";
     	$result = mysqli_query($conn, $sql);
 
     	$loginInfo = mysqli_fetch_assoc($result);
@@ -20,6 +29,7 @@
     		echo "login success";
     		//Set session user variable to user id
     		$_SESSION['user'] = $loginInfo['id'];
+            $_SESSION['rank'] = $loginInfo['rank'];
     		//Redirect user to index page
     		header("Location: index.php");
     		die("Redirecting to index.php"); 
@@ -32,7 +42,6 @@
 
     }
 //Always close connection at end of script?
-mysqli_close($conn);
 ?>
 
 <form action="login.php" method="post"> 
