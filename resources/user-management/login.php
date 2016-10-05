@@ -1,4 +1,8 @@
+
+
 <?php
+
+/*
     require("resources/common.php"); 
 
     $id = $_POST['id'];
@@ -9,6 +13,7 @@
     if($enter == true)
     {
 
+        require("resources/user-management/convertid.php");
     	$sql = "SELECT id, password FROM login WHERE id = $id";
     	$result = mysqli_query($conn, $sql);
 

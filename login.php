@@ -21,7 +21,7 @@
 
         if($entered == true)
         {
-
+            require("resources/user-management/convertid.php");
         	$sql = "SELECT id, password, rank FROM login WHERE id = $id";
         	$result = mysqli_query($conn, $sql);
 

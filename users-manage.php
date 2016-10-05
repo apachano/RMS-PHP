@@ -5,10 +5,16 @@ require("resources/core.php");
 ?>
 
 <?php 
-
+if (empty($_POST)){
+	$_POST['id'] = "";
+	$_POST['nameFirst'] = "";
+	$_POST['nameLast'] = "";
+}
 $id = $_POST['id'];
 $nameFirst = $_POST['nameFirst'];
 $nameLast = $_POST['nameLast'];
+
+require("resources/user-management/convertid.php");
 
 //Script to determine which input boxes have been filled and what $sql is equal to
 

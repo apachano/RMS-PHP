@@ -1,2 +1,5 @@
 <?php
-echo $_SERVER['REQUEST_URI'];
+
+$id="0004";
+require("resources/user-management/convertid.php");
+echo $id;
