@@ -5,7 +5,14 @@ require("resources/core.php")
 ?>
 
 
+<h3>Recent system error message</h3>
+<?php
 
+$errlog = $_SESSION['errmessage'];
+echo $errlog;
+?>
+
+<h3>Server error log</h3>
 <?php
 $sql = "SELECT date, message FROM errorlog";
 $result = $conn->query($sql);

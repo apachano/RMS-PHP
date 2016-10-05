@@ -1,6 +1,6 @@
 <?php 
 $accesslevel=2; 
-$page="employees";
+$page="Employees";
 require("resources/core.php");
 ?>
 

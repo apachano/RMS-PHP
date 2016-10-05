@@ -34,3 +34,18 @@ body{
 #systemMessage{
 	background-color:#FF3333;
 }
+/*collumn display tools*/
+.employee_id{
+	width:70px;
+}
+.employee_name{
+	width:200px;
+	background-color:#EEEEEE;
+}
+.employee_phone{
+	width:80px;
+}
+.employee_address{
+	width:300px;
+	background-color:#EEEEEE;
+}

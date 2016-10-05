@@ -11,4 +11,4 @@ function goBack() {
 <button class="button" onclick="location.href='index.php';">Home</button>
 <button class="button" onclick="goBack()">Back</button>
 
-<div class="title"><?php echo $page; ?></div>
+<h1><?php echo $page; ?></h1>

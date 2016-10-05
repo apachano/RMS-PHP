@@ -1,6 +1,10 @@
 <?php 
+$accesslevel=3; 
+$page="Employee Management";
+require("resources/core.php");
+?>
 
-require ("resources/common.php"); 
+<?php 
 
 $id = $_POST['id'];
 $nameFirst = $_POST['nameFirst'];
@@ -8,11 +12,11 @@ $nameLast = $_POST['nameLast'];
 
 //Script to determine which input boxes have been filled and what $sql is equal to
 
-$sql = "SELECT id, nameFirst, nameLast FROM employees";
+$sql = "SELECT id, nameFirst, nameLast, phoneNumber, email, address FROM employees";
 
 if (!empty($_POST['id'])) 
 { 
-	$sql = "SELECT id, nameFirst, nameLast FROM employees WHERE id=$id";
+	$sql = "SELECT id, nameFirst, nameLast, phoneNumber, email, address FROM employees WHERE id=$id";
 }
 /*if (!empty($nameFirst))
 {
@@ -26,13 +30,6 @@ $result = mysqli_query($conn, $sql)
 
 ?>
 
-<div id="top"><div id="time">Time Not Synced</div></div>
-<div id=head><?php require("resources/head.php"); ?></div>
-<div id=user><?php require("resources/user-management/user.php"); ?></div>
-
-<a class="button" href="index.php">Home</a>
-<a class="button" href="users.php">Back</a>
-
 <div>Add / Update an employee</div>
 
 <div>Search for an employee</div>
@@ -43,10 +40,29 @@ $result = mysqli_query($conn, $sql)
 	<input type="submit" value="search"/>
 </form>
 
+<div class='employee_row'>
+	<div class='row employee_id'>ID</div>
+	<div class='row employee_name'>Name</div>
+	<div class='row employee_phone'>Phone Number</div>
+	<div class='row employee_address'>Address</div>
+</div>
+
 <?php 
 	if (mysqli_num_rows($result) > 0) {
 		while($row = mysqli_fetch_assoc($result)) {
-			echo "id:" . $row["id"]. " - Name: " . $row["nameFirst"]. " " . $row["nameLast"]. "<br>";
+			echo "
+				<div class='employee_row'>
+					<div class='row employee_id'>" . $row['id'] . "</div>
+					<div class='row employee_name'>" . $row["nameFirst"]. " " . $row["nameLast"]. "</div>
+					<div class='row employee_phone'>" . $row["phoneNumber"] . "</div>
+					<div class='row employee_address'>" . $row["address"] . "</div>
+				</div>
+
+				";
+
+
+
+			//"id: " . $row["id"]. " - Name: "" Phone Number: <br>";
 		}
 	} else {
 		echo "No results found";
@@ -54,3 +70,4 @@ $result = mysqli_query($conn, $sql)
 
 	
 	?>
+

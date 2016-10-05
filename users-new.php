@@ -1,8 +1,8 @@
-<?php ?>
-
-<div id="top"><div id="time">Time Not Synced</div></div>
-<div id=head><?php require("resources/head.php"); ?></div>
-<div id=user><?php require("resources/user-management/user.php"); ?></div>
+<?php 
+$accesslevel=5; 
+$page="Employee New";
+require("resources/core.php");
+?>
 <?php
     require("resources/common.php");
 

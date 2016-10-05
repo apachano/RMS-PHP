@@ -7,8 +7,11 @@
 <div id="user"><?php require("resources/user-management/user.php"); ?></div>
 
 <div id="main">
-	<a class="button" href="users.php">Employees</a>
-	<a class="button" href="training.php">Training</a>
-	<a class="button" href="sales.php">Sales</a>
-	<a class="button" href="inventory.php">Inventory</a>
+<button class="button" onclick="location.href='users.php';">Employees</button>
+<button class="button" onclick="location.href='training.php';">Training</button>
+<button class="button" onclick="location.href='sales.php';">Sales</button>
+<button class="button" onclick="location.href='inventory.php';">Inventory</button>
+<button class="button" onclick="location.href='schedule.php';">Schedule</button>
+<button class="button" onclick="location.href='log.php';">LOG</button>
+<button class="button" onclick="location.href='log.php';">LOG</button>
 </div>
