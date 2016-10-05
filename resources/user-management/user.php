@@ -29,6 +29,6 @@
 ?>
 <div>User ID:<?php echo $user; ?></div>
 
-<a class="button" href="resources/user-management/logout.php">Logout</a>
+<button class="button" onclick="location.href='login.php';">Logout</button>
 
 <div id=systemMessage><b>System Message:</b><br> <?php echo $_SESSION['message']; ?></div>

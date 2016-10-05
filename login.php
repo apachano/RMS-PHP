@@ -1,6 +1,10 @@
 <?php
     require("resources/common.php");
 
+    unset($_SESSION['user']);
+    unset($_SESSION['rank']);
+    unset($_SESSION['message']);
+
     $id= "";
     $id = $_POST['id'];
     $entered=true;
@@ -30,6 +34,7 @@
     		//Set session user variable to user id
     		$_SESSION['user'] = $loginInfo['id'];
             $_SESSION['rank'] = $loginInfo['rank'];
+            $_SESSION['message'] = "welcome to the ISP system";
     		//Redirect user to index page
     		header("Location: index.php");
     		die("Redirecting to index.php"); 

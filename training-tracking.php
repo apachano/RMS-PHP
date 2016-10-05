@@ -1,13 +1,8 @@
-<?php $accessLevel = 1;?>
-
-<div id="top"><div id="time">Time Not Synced</div></div>
-<div id=head><?php require("resources/head.php"); ?></div>
-<div id=user><?php require("resources/user-management/user.php"); ?></div>
-
-<a class="button" href="index.php">Home</a>
-<a class="button" href="index.php">Back</a>
-
-<div class="title">Training Tracking</div>
+<?php 
+$accessLevel = 1;
+$page="Training Tracking";
+require("resources/core.php");
+?>
 
 <?php
 
