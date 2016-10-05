@@ -4,38 +4,38 @@ $page="Employee New";
 require("resources/core.php");
 ?>
 <?php
-    require("resources/common.php");
 
-    $id= "";
-    $id = $_POST['id'];
-    $address = $_POST['address'];
-    $nameFirst = $_POST['nameFirst'];
-    $nameLast = $_POST['nameLast'];
-    $email = $_POST['email'];
-    $entered=true;
-    if(empty($_POST['id']))
-    { 
-    	echo "please enter your user id"; 
-    	$entered=false;
-    }
-    if(empty($_POST['nameFirst'])) 
-    { 
-    	echo "please enter a first name"; 
-    	$entered=false;
-    }
-    if(empty($_POST['nameLast'])) 
-    { 
-    	echo "please enter a last name"; 
-    	$entered=false;
-    }
+    if(!empty($_POST)){
+        $id= "";
+        $id = $_POST['id'];
+        $address = $_POST['address'];
+        $nameFirst = $_POST['nameFirst'];
+        $nameLast = $_POST['nameLast'];
+        $email = $_POST['email'];
+        $email = $_POST['phone'];
+        $entered=true;
+        if(empty($_POST['id']))
+        { 
+        	echo "please enter your user id"; 
+        	$entered=false;
+        }
+        if(empty($_POST['nameFirst'])) 
+        { 
+        	echo "please enter a first name"; 
+        	$entered=false;
+        }
+        if(empty($_POST['nameLast'])) 
+        { 
+        	echo "please enter a last name"; 
+        	$entered=false;
+        }
 
-    if($entered == true)
-    {
-    	echo "success";
+        if($entered == true)
+        {
+        	echo "success";
+        }
     }
 ?>
-<a class="button" href="index.php">Home</a>
-<a class="button" href="index.php">Back</a>
 
 <form action="users-new.php" method="post">
     User ID:<br />
@@ -52,6 +52,9 @@ require("resources/core.php");
     <br /><br /> 
     Address:<br /> 
     <input type="text" name="address" value="" />
+    <br /><br /> 
+    Phone Number:<br /> 
+    <input type="text" name="phone" value="" />
     <br /><br /> 
     <input type="submit" value="Register" />
 </form>
